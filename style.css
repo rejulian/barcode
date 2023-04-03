@@ -1,0 +1,9 @@
+canvas{
+	max-width: 100%;
+}
+
+canvas.drawingBuffer{
+	position:absolute;
+	top:0;
+	left:0;
+}
