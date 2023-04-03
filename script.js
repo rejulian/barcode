@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+
+  const $resultados = document.querySelector('#resultado')  
   let codigosLeidos = [];
 
   const busqueda = (arreglo) => {
