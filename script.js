@@ -45,10 +45,9 @@ document.addEventListener("DOMContentLoaded", function() {
   Quagga.onDetected(function(result) {
     $resultados.textContent = data.codeResult.code;
     codigosLeidos.push(result.codeResult.code);
-    // if (codigosLeidos.length === 5) {
-    //   busqueda(codigosLeidos);
-    // }
-    location.href = `http://${result.codeResult.code}`
+    if (codigosLeidos.length === 10) {
+      busqueda(codigosLeidos);
+    }
   });
 
     Quagga.onProcessed(function (result) {
