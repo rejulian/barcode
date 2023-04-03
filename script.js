@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const $resultados = document.querySelector("#resultado");
+    let codigosLeidos = [];
     Quagga.init({
         inputStream : {
             constraints: {
@@ -23,8 +24,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     Quagga.onDetected(function(result) {
-        $resultados.textContent = result.codeResult.code
-        console.log(result);
+        for (let i = 0; i < 20; i++) {
+            codigosLeidos.push(result.codeResult.code)
+        }
+        // $resultados.textContent = result.codeResult.code
+        console.log(codigosLeidos);
     });
 
     Quagga.onProcessed(function (result) {
