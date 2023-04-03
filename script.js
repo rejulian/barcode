@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   Quagga.onDetected(function(result) {
+    $resultados.textContent = data.codeResult.code;
     codigosLeidos.push(result.codeResult.code);
     // if (codigosLeidos.length === 5) {
     //   busqueda(codigosLeidos);
