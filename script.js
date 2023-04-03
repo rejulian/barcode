@@ -1,53 +1,51 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const $resultados = document.querySelector("#resultado");
-    let codigosLeidos = [];
+  let codigosLeidos = [];
 
-    const busqueda = (arreglo) => {
-        let variable = "";
-        let contador = 0;
-        let cuenta = 0;
-        arreglo.map(p => {
-            cuenta = 0
-            arreglo.map(x => {
-                if (p == x) { cuenta++ }
-            })
-            if (cuenta > contador) {
-                contador = cuenta;
-                variable = p;
-            }
-        });
-        location.href = `http://${variable}`;
+  const busqueda = (arreglo) => {
+    let variable = "";
+    let contador = 0;
+    let cuenta = 0;
+    arreglo.map(p => {
+      cuenta = 0
+      arreglo.map(x => {
+        if (p == x) { cuenta++ }
+      })
+      if (cuenta > contador) {
+        contador = cuenta;
+        variable = p;
+      }
+    });
+    window.location.href = `http://${variable}`;
+  }
+
+  Quagga.init({
+    inputStream: {
+      constraints: {
+        width: 1920,
+        height: 1080,
+      },
+      name: "Live",
+      type: "LiveStream",
+      target: document.querySelector('#contenedor')
+    },
+    decoder: {
+      readers: ["ean_reader", "upc_reader", "code_128_reader"] // tipos de códigos de barras que se van a escanear
     }
+  }, function(err) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log("Quagga initialization succeeded");
+    Quagga.start();
+  });
 
-    Quagga.init({
-        inputStream : {
-            constraints: {
-				width: 1920,
-				height: 1080,
-			},
-            name : "Live",
-            type : "LiveStream",
-            target: document.querySelector('#contenedor')    
-        },
-        decoder : {
-            readers : ["ean_reader", "upc_reader", "code_128_reader"] // tipos de códigos de barras que se van a escanear
-        }
-    }, function(err) {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        console.log("Quagga initialization succeeded");
-        Quagga.start();
-    });
-
-    Quagga.onDetected(function(result) {
-        for (let i = 0; i < 20; i++) {
-            codigosLeidos.push(result.codeResult.code)
-        }
-        busqueda(codigosLeidos)
-        // $resultados.textContent = result.codeResult.code
-    });
+  Quagga.onDetected(function(result) {
+    codigosLeidos.push(result.codeResult.code);
+    if (codigosLeidos.length === 20) {
+      busqueda(codigosLeidos);
+    }
+  });
 
     Quagga.onProcessed(function (result) {
 		var drawingCtx = Quagga.canvas.ctx.overlay,
