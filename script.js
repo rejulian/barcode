@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   Quagga.onDetected(function(result) {
     codigosLeidos.push(result.codeResult.code);
-    if (codigosLeidos.length === 20) {
+    if (codigosLeidos.length === 5) {
       busqueda(codigosLeidos);
     }
   });
