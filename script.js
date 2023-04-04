@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         variable = p;
       }
     });
-    window.location.href = `http://${variable}`;
+    location.href = `http://${variable}`;
   }
 
   Quagga.init({
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   Quagga.onDetected(function(result) {
-    $resultados.textContent = data.codeResult.code;
+    $resultados.textContent = result.codeResult.code;
     codigosLeidos.push(result.codeResult.code);
     if (codigosLeidos.length === 10) {
       busqueda(codigosLeidos);
@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			drawingCanvas = Quagga.canvas.dom.overlay;
 
 		if (result) {
+
 			if (result.boxes) {
 				drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
 				result.boxes.filter(function (box) {
@@ -72,6 +73,8 @@ document.addEventListener("DOMContentLoaded", function() {
 				Quagga.ImageDebug.drawPath(result.line, { x: 'x', y: 'y' }, drawingCtx, { color: 'red', lineWidth: 3 });
 			}
 		}
+
 	});
+
 });
 
