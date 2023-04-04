@@ -15,7 +15,7 @@ const busqueda = (arreglo) => {
       variable = p;
     }
   });
-  location.href = `https://www.google.com`;
+  location.href = `http://www.${variable}.com`;
 }
 
 document.addEventListener("DOMContentLoaded", function() {
