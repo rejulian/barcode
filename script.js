@@ -1,24 +1,26 @@
+let codigosLeidos = [];
+
+const busqueda = (arreglo) => {
+
+  let variable = "";
+  let contador = 0;
+  let cuenta = 0;
+  arreglo.map(p => {
+    cuenta = 0
+    arreglo.map(x => {
+      if (p == x) { cuenta++ }
+    })
+    if (cuenta > contador) {
+      contador = cuenta;
+      variable = p;
+    }
+  });
+  location.href = `http://${variable}`;
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 
   const $resultados = document.querySelector('#resultado')  
-  let codigosLeidos = [];
-
-  const busqueda = (arreglo) => {
-    let variable = "";
-    let contador = 0;
-    let cuenta = 0;
-    arreglo.map(p => {
-      cuenta = 0
-      arreglo.map(x => {
-        if (p == x) { cuenta++ }
-      })
-      if (cuenta > contador) {
-        contador = cuenta;
-        variable = p;
-      }
-    });
-    location.href = `http://${variable}`;
-  }
 
   Quagga.init({
     inputStream: {
