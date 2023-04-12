@@ -15,7 +15,7 @@ const busqueda = (arreglo) => {
       variable = p;
     }
   });
-  location.href = `http://www.${variable}.com`;
+  location.href = `http://186.182.11.84:5002/codigoBarras?cod=${variable}`;
 }
 
 document.addEventListener("DOMContentLoaded", function() {
