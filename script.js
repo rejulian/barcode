@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
   Quagga.onDetected(function(result) {
     $resultados.textContent = result.codeResult.code;
     codigosLeidos.push(result.codeResult.code);
-    if (codigosLeidos.length === 10) {
+    if (codigosLeidos.length === 5) {
       busqueda(codigosLeidos);
     }
   });
