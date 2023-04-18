@@ -88,8 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let codigo = result.codeResult.code
     $resultados.textContent = codigo;
     if(calcular(codigo) == true){
-      // location.href = `http://186.182.11.84:5002/codigoBarras?cod=${codigo}`;
-      window.open(`http://186.182.11.84:5002/codigoBarras?cod=${codigo}`)
+      location.href = `http://186.182.11.84:5002/codigoBarras?cod=${codigo}`;
     }
   });
 
