@@ -2,13 +2,13 @@
 // let codigo3cifras = 3560070255795
 function calcular(codigo){
 
-    const codigobarraSTR = codigo.toString()
+    let codigobarraSTR = codigo.toString()
 
    // let codigobarra =codigobarraSTR.split("", 12).join("")
     let codigobarra =codigobarraSTR.substring(0,12)
     console.log(codigobarra);
 
-    const verificador = codigobarraSTR[12];
+    let verificador = codigobarraSTR[12];
 
     let sumaPares = 0; //28
     let sumaImpares = 0; // 24
@@ -54,7 +54,7 @@ function calcular(codigo){
     if(total == verificador){
       return true;
     }else{
-        return false;
+      return false;
     }
 }
 
@@ -87,10 +87,8 @@ document.addEventListener("DOMContentLoaded", function() {
   Quagga.onDetected(function(result) {
     let codigo = result.codeResult.code
     $resultados.textContent = codigo;
-    // codigosLeidos.push(codigo);
-    if (calcular(codigo)) {
-      location.href = `http://186.182.11.84:5002/codigoBarras?cod=${codigo}`
-      return 'Codigo leido exitosamente'
+    if(calcular(codigo) == true){
+      location.href = `http://186.182.11.84:5002/codigoBarras?cod=${codigo}`;
     }
   });
 
