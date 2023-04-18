@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // codigosLeidos.push(codigo);
     if (calcular(codigo)) {
       location.href = `http://186.182.11.84:5002/codigoBarras?cod=${codigo}`
+      return 'Codigo leido exitosamente'
     }
   });
 
