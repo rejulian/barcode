@@ -52,7 +52,7 @@ function calcular(codigo){
     console.log(`total: ${total}`); // 2 --- 5
 
     if(total == verificador){
-      location.href = `http://186.182.11.84:5002/codigoBarras?cod=${codigo}`
+      return true;
     }else{
         return false;
     }
