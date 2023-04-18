@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let codigo = result.codeResult.code
     $resultados.textContent = codigo;
     if(calcular(codigo) == true){
+      Quagga.stop()
       location.href = `http://186.182.11.84:5002/codigoBarras?cod=${codigo}`;
     }
   });
