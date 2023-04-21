@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if(calcular(codigo) == true){
       Quagga.stop()
       // location.href = `http://186.182.11.84:5002/codigoBarras?cod=${codigo}`;
-      location.href = `http://sqldata.dyndns.info:5008/codigoBarras?cod=${codigo}`
+      location.href = `http://sqldata.dyndns.info:5002/codigoBarras?cod=${codigo}`
     }
   });
 
