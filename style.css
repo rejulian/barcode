@@ -17,3 +17,23 @@ canvas.drawingBuffer{
 	top:0;
 	left:0;
 }
+
+input{
+	padding: 10px;
+}
+
+button{
+	padding: 10px;
+	text-transform: uppercase;
+	border: none;
+	cursor: pointer;
+	color: white;
+}
+
+.danger{
+	background-color: rgb(0, 0, 0);
+}
+
+.escanear__container{
+	margin: 30px 0;
+}

@@ -1,5 +1,12 @@
 // let codigo2cifras = 7791293045122
 // let codigo3cifras = 3560070255795
+const inputCodigo = document.getElementById('input-codigo')
+
+function buscarProducto(){
+  let inputValue = inputCodigo.value
+  location.href = `http://sqldata.dyndns.info:5002/codigoBarras?cod=${inputValue}`
+}
+
 function calcular(codigo){
 
     let codigobarraSTR = codigo.toString()
@@ -45,12 +52,6 @@ function calcular(codigo){
         total = redondeo - paresMasMultiplicacion;
     }
 
-    console.log(`pares: ${sumaPares}`); //26
-    console.log(`impares: ${sumaImpares}`); //24
-    console.log(`impares * 3: ${imparesPorTres}`); //72
-    console.log(`pares + impares * 3: ${paresMasMultiplicacion}`); //98
-    console.log(`total: ${total}`); // 2 --- 5
-
     if(total == verificador){
       return true;
     }else{
@@ -58,7 +59,7 @@ function calcular(codigo){
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+function escanear() {
 
   const $resultados = document.querySelector('#resultado')  
 
@@ -120,7 +121,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	});
 
-});
+}
+
+document.addEventListener("DOMContentLoaded", );
 
 
 

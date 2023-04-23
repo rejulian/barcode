@@ -9,8 +9,12 @@
 </head>
 <body>
     <a href="http://pablore.com.ar/">By PabloRe</a>
-	<p id="resultado">Scanee el código de Barras</p>
-
+	<p id="resultado"></p>
+    <input id="input-codigo" type="text" placeholder="Buscar por codigo">
+    <button onclick="buscarProducto()" class="danger">buscar</button>
+    <div class="escanear__container">
+        <button onclick="escanear()" class="danger">Escanear</button>
+    </div>
     <div id="contenedor"></div>
 
     <script src="https://unpkg.com/quagga/dist/quagga.min.js"></script>
