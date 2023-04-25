@@ -39,6 +39,13 @@ button{
 	background-color: #dc3545;
 }
 
-.escanear__container{
+.success{
+	background-color: #28a745;
+}
+
+.acciones__container{
 	margin: 30px 0;
+	display: flex;
+	justify-content: space-between;
+	max-width: 500px;
 }

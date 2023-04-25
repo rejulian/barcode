@@ -7,6 +7,21 @@ function buscarProducto(){
   location.href = `http://sqldata.dyndns.info:5002/codigoBarras?cod=${inputValue}`
 }
 
+function volver(){
+  const date = new Date();
+  let fechaActual = ""
+  const [month, day, year] = [date.getMonth() + 1, date.getDate(), date.getFullYear()];
+  if (month < 9) {
+    fechaActual = `${year}-0${month}-${day}`
+    console.log(fechaActual);
+  }else{
+    fechaActual = `${year}-${month}-${day}`
+    console.log(fechaActual);
+  }
+
+  location.href = `http://sqldata.dyndns.info:5002/inicio?fecha=${fechaActual}`
+}
+
 function calcular(codigo){
 
     let codigobarraSTR = codigo.toString()
@@ -122,10 +137,6 @@ function escanear() {
 	});
 
 }
-
-document.addEventListener("DOMContentLoaded", );
-
-
 
 //let codigosLeidos = [];
 // const busqueda = (arreglo) => {
